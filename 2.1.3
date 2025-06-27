@@ -1,7 +1,13 @@
-text = input()
-mask = '()'
+from itertools import combinations
 
-while mask in text:
-    text = text.replace(mask, "")
 
-print(text == "")
+def inversions(it):
+    combs = list(combinations(it, 2))
+    return sum(map(lambda x: x[0] > x[1], combs))
+
+
+
+
+sequence = [4, 3, 2, 1]
+
+print(inversions(sequence))
