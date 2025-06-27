@@ -1,0 +1,20 @@
+#Ввод размера матрицы, заполнение нулями
+matrix_size = int(input())
+matrix = [[0] * matrix_size for _ in range(matrix_size)]
+
+x = 1
+row = 0
+#Основной блок
+while row != matrix_size:
+    for i in range(row, matrix_size - row):
+        for j in range(row, matrix_size - row):
+            matrix[i][j] = x
+    x += 1
+    row += 1
+
+
+# Вывод матрицы
+for ii in range(matrix_size):
+    for jj in range(matrix_size):
+        print(str(matrix[ii][jj]), end=" ")
+    print() 
